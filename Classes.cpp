@@ -20,7 +20,7 @@ public:
 
     void out()
     {
-        cout << name << endl << subname << endl << age << endl << weight << endl;
+        cout << name << " " << subname << " " << age << " " << weight << endl;
     } 
 
 };
