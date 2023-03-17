@@ -12,20 +12,19 @@ struct float_as_struct
 };
 
 
-int dec_to_bin(unsigned int decnum)
+void dec_to_bin(unsigned int decnum)
 {
     int binnum = 0;
     string temp = "";
     // Написать простой алгоритм по переводу из 10 в 2, все числа если что целые, простой перевод в прямой код
-    while (decnum / 2 != 0)
+    do 
     {
         temp = temp + to_string(decnum % 2);
         decnum = decnum / 2;
-    }
-    temp = temp + to_string(decnum % 2);
+    } while (decnum > 0);
+    
     reverse(temp.begin(), temp.end());
-    cout << temp;
-    return binnum;
+    cout << temp << endl;
 }
 
 
@@ -42,9 +41,9 @@ int main()
     cout << "Мантисса в десятичной: " << t.fraction << endl; // Выводится значение мантиссы в 10
     cout << "Порядок в десятичной: " << t.exponent << endl; // Выводится значение порядка в 10
     cout << "---------------------------------------------" << endl;
-    cout << "Знак в двоичной: " << dec_to_bin(t.sign) << endl; // Не работает потому что надо написать функцию
-    cout << "Мантисса в двоичной: " << dec_to_bin(t.fraction) << endl; // Не работает потому что надо написать функцию
-    cout << "Порядок в двоичной: " << dec_to_bin(t.exponent) << endl; // Не работает потому что надо написать функцию
+    dec_to_bin(t.sign);
+    dec_to_bin(t.fraction);
+    dec_to_bin(t.exponent);
     //---------------------------------------------
 
     return 0;
